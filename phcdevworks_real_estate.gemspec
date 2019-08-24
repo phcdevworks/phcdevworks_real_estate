@@ -1,9 +1,6 @@
 $:.push File.expand_path("lib", __dir__)
-
-# Maintain your gem's version:
 require "phcdevworks_real_estate/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
 
   spec.name        = "phcdevworks_real_estate"
@@ -11,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors     = ["PHCDevworks"]
   spec.email       = ["developers@phcdevworks.com"]
   spec.homepage    = "https://phcdevworks.com/"
-  spec.summary     = "Rails 6 Script Engine"
+  spec.summary     = "Rails 6 Real Estate Engine"
   spec.description = "Ruby on Rails 6 real estate listings management."
   spec.license     = "MIT"
   
