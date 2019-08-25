@@ -1,0 +1,64 @@
+<!-- Title System -->
+<% phc_title "Property Features Manager" %>
+<% phc_title_tagline "Property Features Details" %>
+<% phc_breadcrumb_one link_to "Property" %>
+<% phc_breadcrumb_two link_to "Features" %>
+<% phc_breadcrumb_three yield(:phc_title_tagline) %>
+<!-- Title System -->
+
+<!-- Page Bradcrumbs -->
+<ol class="breadcrumb pull-right">
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+</ol>
+<!-- Page Bradcrumbs -->
+
+<!-- Page Header -->
+<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<!-- Page Header -->
+
+<!-- Page Content -->
+<div class="row">
+
+	<!-- Button Panel -->
+	<div class="col-lg-4">
+
+		<div class="panel panel-inverse">
+			<div class="panel-heading text-center">
+				<h4 class="panel-title">Options Panel</h4>
+			</div>
+			<div class="panel-body">
+				<div class="btn-group d-flex" role="group">
+					<%= link_to 'Update', phcdevworks_real_estate.edit_property_feature_path, class: "btn btn-primary" %>
+					<%= link_to 'Remove', phcdevworks_real_estate.property_features_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+				</div>		
+			</div>
+		</div>
+
+	</div>
+	<!-- Button Panel -->
+
+	<!-- Main Panel -->
+	<div class="col-lg-8">
+		<!-- Panel Content -->
+		<div class="panel panel-inverse">
+			<div class="panel-heading">
+				<div class="panel-heading-btn">
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+				</div>
+				<h4 class="panel-title"><%= yield(:phc_title_tagline) %></h4>
+			</div>
+			<div class="panel-body">
+		    	<p>
+			    <strong>Feature Name</strong>
+			    <%= @property_feature.feature_name %>
+			    </p>
+			</div>
+		</div>
+		<!-- Panel Content -->
+	</div>
+	<!-- Main Panel -->
+</div>
+<!-- Page Content -->

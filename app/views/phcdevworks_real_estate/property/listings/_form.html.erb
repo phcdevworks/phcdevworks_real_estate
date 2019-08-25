@@ -1,0 +1,96 @@
+<!-- PHCRealListings(Pro) Form - Property Listings -->
+<%= form_with(model: property_listing, local: true, html: {class: "add-listing-form"}) do |phc_pro_property_listing| %>
+
+	<!-- PHCNotifi Render Validation -->
+	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @property_listing %>
+	<!-- PHCNotifi Render Validation -->
+
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_title %>
+    <%= phc_pro_property_listing.text_field :listing_title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_description %>
+    <%= phc_pro_property_listing.text_field :listing_description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_street_address %>
+    <%= phc_pro_property_listing.text_field :listing_street_address, class: "form-control", id: "phc-gmaps-input-address" %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_price %>
+    <%= phc_pro_property_listing.text_field :listing_price, class: "form-control" %>
+  </div>
+
+  <hr>
+
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_area %>
+    <%= phc_pro_property_listing.text_field :listing_area, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_property_area %>
+    <%= phc_pro_property_listing.text_field :listing_property_area, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_garage_area %>
+    <%= phc_pro_property_listing.text_field :listing_garage_area, class: "form-control" %>
+  </div>
+
+  <hr>
+
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_room %>
+    <%= phc_pro_property_listing.select(:listing_room, ['1','2','3','4','5','6','7+'], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_bed %>
+    <%= phc_pro_property_listing.select(:listing_bed, ['1','2','3','4','5','6','7+'], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_bath %>
+    <%= phc_pro_property_listing.select(:listing_bath, ['1','2','3','4+'], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_garage %>
+    <%= phc_pro_property_listing.select(:listing_garage, ['1 Car','2 Cars','3 Cars','4+ Cars'], {}, { :class => 'form-control' }) %>
+  </div>
+
+  <hr>
+
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_type %>
+    <%= phc_pro_property_listing.select(:listing_type, ['House','Condominium','Cottage','Land'], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_status %>
+    <%= phc_pro_property_listing.select(:listing_status, ['For Sale','Sold'], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_year_built %>
+    <%= phc_pro_property_listing.select(:listing_year_built, ['1990','2018'], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_energy_class %>
+    <%= phc_pro_property_listing.select(:listing_energy_class, ['A','B'], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_leed_rating %>
+    <%= phc_pro_property_listing.select(:listing_leed_rating, ['Certified','Silver', 'Gold', ''], {}, { :class => 'form-control' }) %>
+  </div>
+
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :listing_upload %>
+    <%= phc_pro_property_listing.file_field :listing_upload, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= phc_pro_property_listing.label :gallery_upload %>
+    <%= phc_pro_property_listing.file_field :gallery_upload, multiple: true , class: "form-control" %>
+  </div>
+
+  <div class="actions">
+  <%= phc_pro_property_listing.submit class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+<!-- PHCRealListings(Pro) Form - Property Listings -->
