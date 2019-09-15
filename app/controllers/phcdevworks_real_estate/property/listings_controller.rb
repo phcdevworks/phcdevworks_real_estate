@@ -30,6 +30,8 @@ module PhcdevworksRealEstate
     # POST /property/listings
     def create
       @property_listing = Property::Listing.new(property_listing_params)
+      @property_listing.user_id = current_user.id
+      @property_listing.org_id = current_user.org_id
       respond_to do |format|
         if @property_listing.save
           format.html { redirect_to property_listings_path, :flash => { :success => 'Author has been Added.' }}

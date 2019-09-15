@@ -30,6 +30,8 @@ module PhcdevworksRealEstate
     # POST /property/features
     def create
       @property_feature = Property::Feature.new(property_feature_params)
+      @property_feature.user_id = current_user.id
+      @property_feature.org_id = current_user.org_id
       respond_to do |format|
         if @property_feature.save
           format.html { redirect_to property_features_path, :flash => { :success => 'Author has been Added.' }}
