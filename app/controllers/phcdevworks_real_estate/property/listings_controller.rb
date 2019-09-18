@@ -16,6 +16,7 @@ module PhcdevworksRealEstate
 
     # GET /property/listings/1
     def show
+      @property_listing = Property::Listing.friendly.find(params[:id])
     end
 
     # GET /property/listings/new
@@ -34,7 +35,7 @@ module PhcdevworksRealEstate
       @property_listing.org_id = current_user.org_id
       respond_to do |format|
         if @property_listing.save
-          format.html { redirect_to property_listings_path, :flash => { :success => 'Author has been Added.' }}
+          format.html { redirect_to property_listings_path, :flash => { :success => 'Property Listing has been Added.' }}
           format.json { render :show, status: :created, location: @property_listing }
         else
           format.html { render :new }
@@ -60,7 +61,7 @@ module PhcdevworksRealEstate
     def destroy
       @property_listing.destroy
       respond_to do |format|
-        format.html { redirect_to property_listings_path, :flash => { :error => 'Category and Connections have all been Removed.' }}
+        format.html { redirect_to property_listings_path, :flash => { :error => 'Property Listing has been Removed.' }}
         format.json { head :no_content }
       end
     end
@@ -69,7 +70,7 @@ module PhcdevworksRealEstate
 
     # Callbacks
     def set_property_listing
-      @property_listing = Property::Listing.find(params[:id])
+      @property_listing = Property::Listing.friendly.find(params[:id])
     end
 
     # Whitelist
