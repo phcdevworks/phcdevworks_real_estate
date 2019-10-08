@@ -1,18 +1,22 @@
-<!-- PHCRealListings(Pro) Form - Property Features -->
+<!-- Form - Property - Features -->
 <%= form_with(model: property_feature, local: true) do |phc_pro_property_feature| %>
 
-	<!-- PHCNotifi Render Validation -->
-	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @property_feature %>
-	<!-- PHCNotifi Render Validation -->
+    <!-- PHCNotifi Render Validation -->
+    <%= render "phcdevworks_notifications/bootstrap/validations", :object => @property_feature %>
+    <!-- PHCNotifi Render Validation -->
 
-  <div class="form-group">
-    <%= phc_pro_property_feature.label :feature_name %>
-    <%= phc_pro_property_feature.text_field :feature_name, class: "form-control" %>
-  </div>
+    <!-- Form Input Fields -->
+    <div class="form-group">
+        <%= phc_pro_property_feature.label :feature_name, "Feature Name" %>
+        <%= phc_pro_property_feature.text_field :feature_name, placeholder: "Feature Name", class: "form-control" %>
+    </div>
+    <!-- Form Input Fields -->
 
-  <div class="actions">
-    <%= phc_pro_property_feature.submit class: "btn btn-primary" %>
-  </div>
+    <!-- Form Submition Button -->
+    <div class="actions">
+        <%= phc_pro_property_feature.submit class: "btn btn-primary" %>
+    </div>
+    <!-- For Submition Button -->
 
 <% end %>
-<!-- PHCRealListings(Pro) Form - Property Features -->
+<!-- Form - Property - Features -->

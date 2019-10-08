@@ -1,10 +1,10 @@
-<!-- Title System -->
+<!-- PHCTitleSEO Title Variables -->
 <% phc_title "Property Listings" %>
 <% phc_title_tagline "Property Listings Index" %>
 <% phc_breadcrumb_one link_to "Property" %>
 <% phc_breadcrumb_two link_to "Listings" %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
-<!-- Title System -->
+<!-- PHCTitleSEO Title Variables -->
 
 <!-- Page Bradcrumbs -->
 <ol class="breadcrumb pull-right">
@@ -15,56 +15,76 @@
 <!-- Page Bradcrumbs -->
 
 <!-- Page Header -->
-<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<h2 class="page-header"><%= yield(:phc_title) %></h2>
 <!-- Page Header -->
-			
+
 <!-- Page Content -->
-<div class="panel panel-inverse">
-  <div class="panel-heading">
-    <div class="panel-heading-btn">
-      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
-      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-    </div>
-    <h4 class="panel-title"><%= yield(:phc_title_tagline) %></h4>
-  </div>
-  <div class="panel-body">
-    <!-- Table - Property Index -->
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Listing Title</th>
-            <th>Listing Price</th>
-            <th>Year Built</th>
-            <th>Listing Type</th>
-            <th>Listing Status</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @property_listings.each do |property_listing| %>
-            <tr>
-              <td><%= property_listing.listing_title %></td>
-              <td><%= property_listing.listing_price %></td>
-              <td><%= property_listing.listing_year_built %></td>
-              <td><%= property_listing.listing_type %></td>
-              <td><%= property_listing.listing_status %></td>
-              <td><div class="btn-group d-flex" role="group" aria-label="Property Listings">
-                <%= link_to 'Details', property_listing, class: "btn btn-primary btn-xs" %>
-                <%= link_to 'Update', edit_property_listing_path(property_listing), class: "btn btn-primary btn-xs" %>
-                <%= link_to 'Remove', property_listing, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-			<%= link_to phcdevworks_real_estate.new_property_listing_path, class: "btn btn-primary" do %>
-				<i class="fas fa-plus-circle"></i>
-				<%= "Add a New Listing" %>
-			<% end %>
-    </div>
-    <!-- Table - Property Index -->
-  </div>
+<div class="row">
+	<div class="col-lg-12">
+
+		<!-- Panel -->
+		<div class="panel panel-inverse">
+
+			<!-- Panel - Heading -->
+			<div class="panel-heading">
+				<h4 class="panel-title"><%= yield(:phc_title) %></h4>
+			</div>
+			<!-- Panel - Heading -->
+
+			<!-- Panel - Body -->
+			<div class="panel-body">
+
+				<!-- Index - Table -->
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Listing Title</th>
+                                <th>Listing Price</th>
+                                <th>Year Built</th>
+                                <th>Listing Type</th>
+                                <th>Listing Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% @property_listings.each do |property_listing| %>
+                                <tr>
+                                    <td><%= property_listing.listing_title %></td>
+                                    <td><%= property_listing.listing_price %></td>
+                                    <td><%= property_listing.listing_year_built %></td>
+                                    <td><%= property_listing.listing_type %></td>
+                                    <td><%= property_listing.listing_status %></td>
+                                    <td>
+                                        <div class="btn-group d-flex" role="group" aria-label="Property Listings">
+                                            <%= link_to "Listing Details", property_listing, class: "btn btn-primary btn-xs" %>
+                                            <%= link_to "Update Listing", edit_property_listing_path(property_listing), class: "btn btn-primary btn-xs" %>
+                                            <%= link_to "Remove Listing", property_listing, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Are you sure?" } %>
+                                        </div>
+                                    </td>
+                                </tr>
+    						<% end %>
+						</tbody>
+
+					</table>
+				</div>
+				<!-- Index - Table -->
+
+				<!-- New Button -->
+                <%= link_to phcdevworks_real_estate.new_property_listing_path, class: "btn btn-primary" do %>
+                    <i class="fad fa-plus-circle"></i>
+                    <%= "Add a New Listing" %>
+				<% end %>
+				<!-- New Button -->
+
+			</div>
+			<!-- Panel - Body -->
+
+		</div>
+		<!-- Panel -->
+
+	</div>
 </div>
 <!-- Page Content -->
