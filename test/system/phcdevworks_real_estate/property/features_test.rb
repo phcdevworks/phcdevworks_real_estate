@@ -15,7 +15,6 @@ module PhcdevworksRealEstate
       visit property_features_url
       click_on "New Property/Feature"
 
-      fill_in "Feature name", with: @property_feature.feature_name
       click_on "Create Feature"
 
       assert_text "Feature was successfully created"
@@ -26,7 +25,6 @@ module PhcdevworksRealEstate
       visit property_features_url
       click_on "Edit", match: :first
 
-      fill_in "Feature name", with: @property_feature.feature_name
       click_on "Update Feature"
 
       assert_text "Feature was successfully updated"

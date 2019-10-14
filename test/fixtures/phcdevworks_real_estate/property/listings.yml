@@ -1,37 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  listing_title: MyString
-  listing_description: MyText
-  listing_street_address: MyString
-  listing_price: MyString
-  listing_area: MyString
-  listing_property_area: MyString
-  listing_garage_area: MyString
-  listing_room: MyString
-  listing_bed: MyString
-  listing_bath: MyString
-  listing_garage: MyString
-  listing_type: MyString
-  listing_status: MyString
-  listing_year_built: MyString
-  listing_energy_class: MyString
-  listing_leed_rating: MyString
-
-two:
-  listing_title: MyString
-  listing_description: MyText
-  listing_street_address: MyString
-  listing_price: MyString
-  listing_area: MyString
-  listing_property_area: MyString
-  listing_garage_area: MyString
-  listing_room: MyString
-  listing_bed: MyString
-  listing_bath: MyString
-  listing_garage: MyString
-  listing_type: MyString
-  listing_status: MyString
-  listing_year_built: MyString
-  listing_energy_class: MyString
-  listing_leed_rating: MyString
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value

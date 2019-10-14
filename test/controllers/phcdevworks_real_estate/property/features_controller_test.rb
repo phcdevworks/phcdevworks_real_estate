@@ -20,7 +20,7 @@ module PhcdevworksRealEstate
 
     test "should create property_feature" do
       assert_difference('Property::Feature.count') do
-        post property_features_url, params: { property_feature: { feature_name: @property_feature.feature_name } }
+        post property_features_url, params: { property_feature: {  } }
       end
 
       assert_redirected_to property_feature_url(Property::Feature.last)
@@ -37,7 +37,7 @@ module PhcdevworksRealEstate
     end
 
     test "should update property_feature" do
-      patch property_feature_url(@property_feature), params: { property_feature: { feature_name: @property_feature.feature_name } }
+      patch property_feature_url(@property_feature), params: { property_feature: {  } }
       assert_redirected_to property_feature_url(@property_feature)
     end
 
