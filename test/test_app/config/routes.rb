@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  mount PhcdevworksRealEstate::Engine => "/phcdevworks_real_estate"
+
+    # Root Path
+    root :to => "website/page#index"
+    
+    # Mount Engine for Testing
+    mount PhcdevworksRealEstate::Engine => "/"
+
 end
