@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_113543) do
+ActiveRecord::Schema.define(version: 2019_10_25_110908) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -52,11 +52,6 @@ ActiveRecord::Schema.define(version: 2019_10_15_113543) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "features_listings", id: false, force: :cascade do |t|
-    t.integer "feature_id", null: false
-    t.integer "listing_id", null: false
-  end
-
   create_table "phcdevworks_accounts_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -77,6 +72,11 @@ ActiveRecord::Schema.define(version: 2019_10_15_113543) do
     t.index ["org_id"], name: "index_phcdevworks_accounts_users_on_org_id", unique: true
     t.index ["reset_password_token"], name: "index_phcdevworks_accounts_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
+  end
+
+  create_table "phcdevworks_real_estate_features_listings", force: :cascade do |t|
+    t.integer "feature_id"
+    t.integer "listing_id"
   end
 
   create_table "phcdevworks_real_estate_property_features", force: :cascade do |t|
