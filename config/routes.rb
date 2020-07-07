@@ -14,5 +14,6 @@ PhcdevworksRealEstate::Engine.routes.draw do
 
   # Mount Routes
   mount PhcdevworksAccounts::Engine, :at => '/'
+  mount PhcdevworksCoreModules::Engine, :at => '/'
 
 end
