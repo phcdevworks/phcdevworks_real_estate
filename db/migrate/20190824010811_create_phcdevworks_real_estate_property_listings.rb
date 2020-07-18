@@ -23,6 +23,8 @@ class CreatePhcdevworksRealEstatePropertyListings < ActiveRecord::Migration[6.0]
       t.string :listing_energy_class
       t.string :listing_leed_rating
 
+      t.string :optimization_id
+
       t.string :slug
       t.string :user_id
       t.string :org_id
