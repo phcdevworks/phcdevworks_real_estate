@@ -1,3 +1,4 @@
+# This migration comes from phcdevworks_real_estate (originally 20190824010811)
 class CreatePhcdevworksRealEstatePropertyListings < ActiveRecord::Migration[6.0]
   def change
     create_table :phcdevworks_real_estate_property_listings do |t|

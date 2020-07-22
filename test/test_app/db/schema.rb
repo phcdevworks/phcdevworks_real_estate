@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_110908) do
+ActiveRecord::Schema.define(version: 2020_07_21_233669) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 2019_10_25_110908) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "firstname"
@@ -74,13 +86,27 @@ ActiveRecord::Schema.define(version: 2019_10_25_110908) do
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
   end
 
-  create_table "phcdevworks_real_estate_features_listings", force: :cascade do |t|
-    t.integer "feature_id"
-    t.integer "listing_id"
+  create_table "phcdevworks_core_modules_marketing_optimization_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "marketing_optimization_versions"
   end
 
-  create_table "phcdevworks_real_estate_property_features", force: :cascade do |t|
-    t.string "feature_name"
+  create_table "phcdevworks_core_modules_marketing_optimizations", force: :cascade do |t|
+    t.string "marketing_optimization_page_title"
+    t.text "marketing_optimization_page_description"
+    t.string "marketing_optimization_og_title"
+    t.text "marketing_optimization_og_description"
+    t.string "marketing_optimization_og_type"
+    t.string "marketing_optimization_og_url"
+    t.string "marketing_optimization_twitter_title"
+    t.text "marketing_optimization_twitter_description"
+    t.string "marketing_optimization_twitter_type"
+    t.string "marketing_optimization_twitter_url"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -88,23 +114,59 @@ ActiveRecord::Schema.define(version: 2019_10_25_110908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "phcdevworks_core_modules_post_categories", force: :cascade do |t|
+    t.string "post_category_name"
+    t.string "optimization_id"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phcdevworks_core_modules_post_category_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "post_category_versions"
+  end
+
+  create_table "phcdevworks_real_estate_property_features", force: :cascade do |t|
+    t.string "property_feature_name"
+    t.string "optimization_id"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phcdevworks_real_estate_property_features_listings", force: :cascade do |t|
+    t.integer "feature_id"
+    t.integer "listing_id"
+  end
+
   create_table "phcdevworks_real_estate_property_listings", force: :cascade do |t|
-    t.string "listing_title"
-    t.text "listing_description"
-    t.string "listing_street_address"
-    t.string "listing_price"
-    t.string "listing_area"
-    t.string "listing_property_area"
-    t.string "listing_garage_area"
-    t.string "listing_room"
-    t.string "listing_bed"
-    t.string "listing_bath"
-    t.string "listing_garage"
-    t.string "listing_type"
-    t.string "listing_status"
-    t.string "listing_year_built"
-    t.string "listing_energy_class"
-    t.string "listing_leed_rating"
+    t.string "property_listing_title"
+    t.text "property_listing_description"
+    t.string "property_listing_street_address"
+    t.string "property_listing_price"
+    t.string "property_listing_area"
+    t.string "property_listing_property_area"
+    t.string "property_listing_garage_area"
+    t.string "property_listing_room"
+    t.string "property_listing_bed"
+    t.string "property_listing_bath"
+    t.string "property_listing_garage"
+    t.string "property_listing_type"
+    t.string "property_listing_status"
+    t.string "property_listing_year_built"
+    t.string "property_listing_energy_class"
+    t.string "property_listing_leed_rating"
+    t.string "optimization_id"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"

@@ -75,7 +75,7 @@ module PhcdevworksRealEstate
 
     # Whitelist
     def property_listing_params
-      params.require(:property_listing).permit(:listing_title, :listing_description, :listing_street_address, :listing_price, :listing_area, :listing_property_area, :listing_garage_area, :listing_room, :listing_bed,  :listing_bath, :listing_garage, :listing_type, :listing_status, :listing_year_built, :listing_energy_class, :listing_leed_rating, :listing_upload, :user_id, :org_id, gallery_upload: [], feature_ids: [])
+      params.require(:property_listing).permit(:property_listing_title, :property_listing_description, :property_listing_street_address, :property_listing_price, :property_listing_area, :property_listing_property_area, :property_listing_garage_area, :property_listing_room, :property_listing_bed,  :property_listing_bath, :property_listing_garage, :property_listing_type, :property_listing_status, :property_listing_year_built, :property_listing_energy_class, :property_listing_leed_rating, :optimization_id, :slug, :user_id, :org_id, gallery_upload: [], feature_ids: [])
     end
 
   end

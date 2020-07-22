@@ -48,7 +48,7 @@
 						<tbody>
 							<% @property_features.each do |property_feature| %>
 								<tr>
-									<td class="highlight"><%= link_to property_feature.feature_name, property_feature %></td>
+									<td class="highlight"><%= link_to property_feature.property_feature_name, property_feature %></td>
 									<td>
 										<div class="btn-group d-flex" role="group" aria-label="Property Listings">
 											<%= link_to "Feature Details", property_feature, class: "btn btn-primary btn-xs" %>

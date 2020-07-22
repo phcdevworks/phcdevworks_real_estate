@@ -7,99 +7,99 @@
     
     <!-- Form Input Fields -->
     <div class="form-group">
-        <%= form.label :listing_title, "Listing TItle" %>
-        <%= form.text_field :listing_title, placeholder: "Listing Title", class: "form-control" %>
+        <%= form.label :property_listing_title, "Listing TItle" %>
+        <%= form.text_field :property_listing_title, placeholder: "Listing Title", class: "form-control" %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_description, "Listing Description" %>
-        <%= form.text_area :listing_description, placeholder: "Listing Description", class: "form-control" %>
+        <%= form.label :property_listing_description, "Listing Description" %>
+        <%= form.text_area :property_listing_description, placeholder: "Listing Description", class: "form-control" %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_street_address, "Listing Street Address" %>
-        <%= form.text_field :listing_street_address, placeholder: "Listing Street Address", class: "form-control", id: "phc-gmaps-input-address" %>
+        <%= form.label :property_listing_street_address, "Listing Street Address" %>
+        <%= form.text_field :property_listing_street_address, placeholder: "Listing Street Address", class: "form-control", id: "phc-gmaps-input-address" %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_price, "Listing Price" %>
-        <%= form.text_field :listing_price, placeholder: "Listing Price", class: "form-control" %>
+        <%= form.label :property_listing_price, "Listing Price" %>
+        <%= form.text_field :property_listing_price, placeholder: "Listing Price", class: "form-control" %>
     </div>
     
     <hr>
     
     <div class="form-group">
-        <%= form.label :listing_area, "Listing Area" %>
-        <%= form.text_field :listing_area, placeholder: "Listing Area", class: "form-control" %>
+        <%= form.label :property_listing_area, "Listing Area" %>
+        <%= form.text_field :property_listing_area, placeholder: "Listing Area", class: "form-control" %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_property_area, "Listing Property Area" %>
-        <%= form.text_field :listing_property_area, placeholder: "Listing Property Area", class: "form-control" %>
+        <%= form.label :property_listing_property_area, "Listing Property Area" %>
+        <%= form.text_field :property_listing_property_area, placeholder: "Listing Property Area", class: "form-control" %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_garage_area, "Listing Garage Area" %>
-        <%= form.text_field :listing_garage_area, placeholder: "Listing Garage Area", class: "form-control" %>
+        <%= form.label :property_listing_garage_area, "Listing Garage Area" %>
+        <%= form.text_field :property_listing_garage_area, placeholder: "Listing Garage Area", class: "form-control" %>
     </div>
     
     <hr>
     
     <div class="form-group">
-        <%= form.label :listing_room, "Listing How Many Rooms" %>
-        <%= form.select(:listing_room, ["1","2","3","4","5","6","7+"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_isting_room, "Listing How Many Rooms" %>
+        <%= form.select(:property_listing_room, ["1","2","3","4","5","6","7+"], {}, { :class => "form-control" }) %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_bed, "Listing How Many Bedrooms" %>
-        <%= form.select(:listing_bed, ["1","2","3","4","5","6","7+"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_bed, "Listing How Many Bedrooms" %>
+        <%= form.select(:property_listing_bed, ["1","2","3","4","5","6","7+"], {}, { :class => "form-control" }) %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_bath, "Listing How Many Bathrooms" %>
-        <%= form.select(:listing_bath, ["1","2","3","4+"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_bath, "Listing How Many Bathrooms" %>
+        <%= form.select(:property_listing_bath, ["1","2","3","4+"], {}, { :class => "form-control" }) %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_garage, "Listing Garage" %>
-        <%= form.select(:listing_garage, ["1 Car","2 Cars","3 Cars","4+ Cars"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_garage, "Listing Garage" %>
+        <%= form.select(:property_listing_garage, ["1 Car","2 Cars","3 Cars","4+ Cars"], {}, { :class => "form-control" }) %>
     </div>
     
     <hr>
     
     <div class="form-group">
-        <%= form.label :listing_type, "Listing Type" %>
-        <%= form.select(:listing_type, ["House","Condominium","Cottage","Land"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_type, "Listing Type" %>
+        <%= form.select(:property_listing_type, ["House","Condominium","Cottage","Land"], {}, { :class => "form-control" }) %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_status, "Listing Status" %>
-        <%= form.select(:listing_status, ["For Sale","Sold"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_status, "Listing Status" %>
+        <%= form.select(:property_listing_status, ["For Sale","Sold"], {}, { :class => "form-control" }) %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_year_built, "" %>
-        <%= form.select(:listing_year_built, ["1990","2018"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_year_built, "" %>
+        <%= form.select(:property_listing_year_built, ["1990","2018"], {}, { :class => "form-control" }) %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_energy_class, "Listing Energy Class" %>
-        <%= form.select(:listing_energy_class, ["A","B"], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_energy_class, "Listing Energy Class" %>
+        <%= form.select(:property_listing_energy_class, ["A","B"], {}, { :class => "form-control" }) %>
     </div>
 
     <div class="form-group">
-        <%= form.label :listing_leed_rating, "Listing LEED Rating" %>
-        <%= form.select(:listing_leed_rating, ["Certified","Silver", "Gold", ""], {}, { :class => "form-control" }) %>
+        <%= form.label :property_listing_leed_rating, "Listing LEED Rating" %>
+        <%= form.select(:property_listing_leed_rating, ["Certified","Silver", "Gold", ""], {}, { :class => "form-control" }) %>
     </div>
     
     <div class="form-group">
-        <%= form.label :listing_upload, "" %>
-        <%= form.file_field :listing_upload, placeholder: "", class: "form-control" %>
+        <%= form.label :property_listing_upload, "" %>
+        <%= form.file_field :property_listing_upload, placeholder: "", class: "form-control" %>
     </div>
 
     <div class="form-group">
-        <%= form.label :gallery_upload, "" %>
-        <%= form.file_field :gallery_upload, multiple: true , placeholder: "", class: "form-control" %>
+        <%= form.label :property_gallery_upload, "" %>
+        <%= form.file_field :property_gallery_upload, multiple: true , placeholder: "", class: "form-control" %>
     </div>
     <!-- Form Input Fields -->
     

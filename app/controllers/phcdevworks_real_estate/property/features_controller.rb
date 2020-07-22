@@ -75,7 +75,7 @@ module PhcdevworksRealEstate
 
     # Whitelist
     def property_feature_params
-      params.require(:property_feature).permit(:feature_name)
+      params.require(:property_feature).permit(:property_feature_name)
     end
 
   end

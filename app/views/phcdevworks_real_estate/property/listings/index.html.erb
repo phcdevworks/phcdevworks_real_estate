@@ -52,11 +52,11 @@
                         <tbody>
                             <% @property_listings.each do |property_listing| %>
                                 <tr>
-                                    <td><%= property_listing.listing_title %></td>
-                                    <td><%= property_listing.listing_price %></td>
-                                    <td><%= property_listing.listing_year_built %></td>
-                                    <td><%= property_listing.listing_type %></td>
-                                    <td><%= property_listing.listing_status %></td>
+                                    <td><%= property_listing.property_listing_title %></td>
+                                    <td><%= property_listing.property_listing_price %></td>
+                                    <td><%= property_listing.property_listing_year_built %></td>
+                                    <td><%= property_listing.property_listing_type %></td>
+                                    <td><%= property_listing.property_listing_status %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group" aria-label="Property Listings">
                                             <%= link_to "Listing Details", property_listing, class: "btn btn-primary btn-xs" %>
